@@ -12,6 +12,7 @@ namespace FlightEvents.Data
         public int SubIndex { get; set; }
         public long Score { get; set; }
         public string ScoreDisplay { get; set; }
+        public long TimeSinceStart { get; set; }
     }
 
     public interface ILeaderboardStorage

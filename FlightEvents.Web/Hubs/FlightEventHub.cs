@@ -516,7 +516,8 @@ namespace FlightEvents.Web.Hubs
                         SubIndex = i + 1,
                         PlayerName = stopwatch.Name,
                         Score = -(long)lapTime.TotalMilliseconds,
-                        ScoreDisplay = $"{lapTime.Hours:00}:{lapTime.Minutes:00}:{lapTime.Seconds:00}.{lapTime.Milliseconds:000}"
+                        ScoreDisplay = $"{lapTime.Hours:00}:{lapTime.Minutes:00}:{lapTime.Seconds:00}.{lapTime.Milliseconds:000}",
+                        TimeSinceStart = (long)(stopwatch.LapsDateTime[i] - stopwatch.StartedDateTime.Value).TotalMilliseconds
                     };
 
                     await leaderboardStorage.SaveAsync(leaderboardRecord);
